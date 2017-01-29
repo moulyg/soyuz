@@ -1,0 +1,33 @@
+{
+  "name": "ssh-manager",
+  "version": "1.0.0",
+  "description": "This is a cross platform ssh-manager where you can manage the connection",
+  "main": "main.js",
+  "scripts": {
+    "start": "echo 'please run `npm run dev` in one tab and then `npm run app` in another one'",
+    "app": "electron .",
+    "dev": "webpack -w",
+    "build": "webpack -p",
+    "clean": "npm cache clear && rm -rf node_modules && rm -rf dist"
+  },
+  "repository": "https://github.com/mouly/ssh-manager",
+  "keywords": [
+    "ssh",
+    "manager",
+    "app",
+    "remote",
+    "connection"
+  ],
+  "author": "moulyg",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.4.7",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-babili": "^0.0.9",
+    "babel-preset-react": "^6.16.0",
+    "copy-webpack-plugin": "^4.0.0",
+    "webpack": "2.2.0"
+  }
+}

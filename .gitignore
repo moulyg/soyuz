@@ -35,3 +35,9 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Skip idea files
+.idea
+
+# Skip distribution
+dist
