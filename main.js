@@ -1,7 +1,7 @@
 const electron = require('electron')
 // Module to control application life.
 // Module to create native browser window.
-const {BrowserWindow, app} = electron
+const {BrowserWindow, app,Menu} = electron
 
 const path = require('path')
 const url = require('url')
@@ -57,3 +57,16 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+const template = [
+    {
+        label: 'Edit',
+        submenu: [
+            {
+                role: 'undo'
+            }
+        ]
+    }];
+/*
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);*/
