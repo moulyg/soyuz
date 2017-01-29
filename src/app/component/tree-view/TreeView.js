@@ -8,7 +8,7 @@ class TreeView extends Component {
         let {items} = this.props;
         return (
             <div className="tree-view">
-                <UL items={items}/>
+                <UL child={false} items={items}/>
             </div>
         )
     }

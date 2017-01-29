@@ -5,18 +5,23 @@ import UL from './ul';
 class LI extends Component {
 
     render() {
-        let {item} = this.props;
+        let {item,child} = this.props;
         return (
-            <li className="tree-view">
-                <a href="javascript:;">{item.name}</a>
-                {item.children ? <UL items={item.children}/> : ""}
+            <li className={ child?"child-node" : "parent-node"}>
+                {child ? '' : <i className="fa fa-chevron-right"></i>}
+                <a href="javascript:;">
+                    {child ? <i className="fa fa-plug"></i> : <i className="fa fa-folder"></i>}
+                    {item.name}
+                </a>
+                {item.children ? <UL child={true} items={item.children}/> : ""}
             </li>
         )
     }
 }
 
 LI.propTypes = {
-    item: PropTypes.object.isRequired
+    item: PropTypes.object.isRequired,
+    child: PropTypes.bool.isRequired
 };
 
 export default LI;

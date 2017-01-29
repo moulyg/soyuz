@@ -1,7 +1,7 @@
 const electron = require('electron')
 // Module to control application life.
 // Module to create native browser window.
-const {BrowserWindow, app,Menu} = electron
+const {BrowserWindow, app,Menu, Tray} = electron
 
 const path = require('path')
 const url = require('url')
@@ -31,6 +31,16 @@ function createWindow() {
         // when you should delete the corresponding element.
         mainWindow = null
     })
+
+    /*tray = new Tray('./dist/assets/i/tray-icon.png');
+    const contextMenu = Menu.buildFromTemplate([
+        {label: 'Item1', type: 'radio'},
+        {label: 'Item2', type: 'radio'},
+        {label: 'Item3', type: 'radio', checked: true},
+        {label: 'Item4', type: 'radio'}
+    ])
+    tray.setToolTip('This is my application.');
+    tray.setContextMenu(contextMenu)*/
 }
 
 // This method will be called when Electron has finished
@@ -68,5 +78,5 @@ const template = [
         ]
     }];
 /*
-const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);*/
+ const menu = Menu.buildFromTemplate(template);
+ Menu.setApplicationMenu(menu);*/

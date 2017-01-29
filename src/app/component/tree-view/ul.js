@@ -5,8 +5,8 @@ import LI from './li'
 class UL extends Component {
 
     render() {
-        let {items} = this.props;
-        items = items.map((item, index) => <LI key={index} item={item}/>);
+        let {items,child} = this.props;
+        items = items.map((item, index) => <LI key={index} child={child} item={item}/>);
         return (
             <ul>
                 {items}
@@ -16,7 +16,8 @@ class UL extends Component {
 }
 
 UL.propTypes = {
-    items: PropTypes.array.isRequired
+    items: PropTypes.array.isRequired,
+    child: PropTypes.bool.isRequired
 };
 
 export default UL;
