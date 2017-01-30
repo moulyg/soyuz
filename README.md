@@ -5,7 +5,7 @@ This is a cross platform ssh-manager where you can manage the connection
 Mouly Gunarathne
 Malaka Ekanayake 
 
-#run project
+#Run project
 
 ```
 npm install
