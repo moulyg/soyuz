@@ -1,3 +1,4 @@
+// This is the main file
 const electron = require('electron')
 // Module to control application life.
 // Module to create native browser window.
