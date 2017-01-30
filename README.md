@@ -1,5 +1,5 @@
 # soyuz
-This is a cross platform ssh-manager where you can manage the connection
+This is a cross platform ssh-manager where you can manage the ssh connections
 
 #Authors 
 Mouly Gunarathne
