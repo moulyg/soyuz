@@ -2,7 +2,7 @@
 const electron = require('electron')
 // Module to control application life.
 // Module to create native browser window.
-const {BrowserWindow, app,Menu, Tray} = electron
+const {BrowserWindow, app, Menu, Tray} = electron
 
 const path = require('path')
 const url = require('url')
@@ -33,7 +33,7 @@ function createWindow() {
         mainWindow = null
     })
 
-    /*tray = new Tray('./dist/assets/i/tray-icon.png');
+    tray = new Tray('./dist/assets/i/tray-icon.png');
     const contextMenu = Menu.buildFromTemplate([
         {label: 'Item1', type: 'radio'},
         {label: 'Item2', type: 'radio'},
@@ -41,7 +41,7 @@ function createWindow() {
         {label: 'Item4', type: 'radio'}
     ])
     tray.setToolTip('This is my application.');
-    tray.setContextMenu(contextMenu)*/
+    tray.setContextMenu(contextMenu)
 }
 
 // This method will be called when Electron has finished

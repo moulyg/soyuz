@@ -20,6 +20,21 @@ class SideBar extends Component {
             {name: "Connection 5"}
         ];
 
+       /* let items = [
+            {
+                name: "Group 01",
+                type: "GROUP",
+                uuid: "1000000",
+                children: [
+                    {
+                        name: "Connection 21",
+                        type: "CONNECTION",
+                        uuid: "1000000",
+                        server: "server"
+                    }
+                ]
+            }
+        ];*/
         return (
             <aside>
                 <TreeView items={items}/>

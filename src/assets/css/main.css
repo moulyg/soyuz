@@ -1,8 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     margin: 0;
     padding: 0;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .main-container {
@@ -18,9 +22,17 @@ body {
 }
 
 aside {
-    position: absolute;
+    float: left;
     width: 200px;
-    height: calc(100% - 0px);
+    height: 100vh;
+    border-right: 1px solid #181a1f;
+    background: #21252b;
+}
+
+.tab-wrapper {
+    float: left;
+    width: calc(100% - 200px);
+    height: 100vh;
     border-right: 1px solid #181a1f;
     background: #21252b;
 }
@@ -52,4 +64,61 @@ aside {
 .tree-view ul li a {
     color: #9da5b3;
     text-decoration: none;
+}
+
+.tab-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    border-bottom: 1px solid #181a1f;
+}
+
+.tab-menu li {
+    display: inline-block;
+    background: #21252b;
+    height: 40px;
+    line-height: 40px;
+    border-left: 1px solid #181a1f;
+    border-bottom: 1px solid #181a1f;
+    border-right: 1px solid #181a1f;
+}
+
+.tab-menu li:first-child {
+    border-left: 0;
+}
+
+.tab-menu li a {
+    color: #9da5b3;
+    padding: 0 100px;
+    height: 39px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+}
+
+.tab-menu li:hover {
+    background: #282c34;
+}
+
+.tab-menu li:hover a {
+    color: #fff;
+}
+
+.tab-menu li.active {
+    background: #282c34;
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+.tab-menu li.active a {
+    color: #fff;
+    border-left: 2px solid #2d7dba;
+}
+
+.tab-panel {
+    width: 100%;
+    height: calc(100vh - 40px);
+    background: #282c34;
 }
