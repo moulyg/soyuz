@@ -41,3 +41,6 @@ jspm_packages
 
 # Skip distribution
 dist
+
+#mac files
+.DS_Store

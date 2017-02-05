@@ -1,46 +1,47 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
-import TreeView from '../tree-view'
+import {openNewTab, setActiveTab} from '../../action/connectionAction';
+
+import TreeView from '../tree-view';
 
 class SideBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {openGroups: []};
+    }
 
+    selectItem(item, child) {
+        let {openGroups} = this.state;
+        let {dispatch} = this.props;
+        if (!child) {
+            if (openGroups.indexOf(item.uuid) === -1) {
+                openGroups.push(item.uuid)
+            } else {
+                openGroups.splice(openGroups.indexOf(item.uuid), 1);
+            }
+        } else {
+            dispatch(openNewTab(item.uuid));
+            dispatch(setActiveTab(item.uuid));
+        }
+        this.setState({openGroups});
+    }
 
     render() {
-        let items = [
-            {name: "Connection 1"},
-            {
-                name: "Connection 2",
-                children: [
-                    {name: "Connection 21"},
-                    {name: "Connection 22"}
-                ]
-            },
-            {name: "Connection 3"},
-            {name: "Connection 4"},
-            {name: "Connection 5"}
-        ];
-
-       /* let items = [
-            {
-                name: "Group 01",
-                type: "GROUP",
-                uuid: "1000000",
-                children: [
-                    {
-                        name: "Connection 21",
-                        type: "CONNECTION",
-                        uuid: "1000000",
-                        server: "server"
-                    }
-                ]
-            }
-        ];*/
+        let {connections, activeTab} = this.props.connection;
+        let {openGroups} = this.state;
         return (
             <aside>
-                <TreeView items={items}/>
+                <TreeView
+                    activeTab={activeTab}
+                    openGroups={openGroups}
+                    selectItem={this.selectItem.bind(this)}
+                    items={connections}/>
             </aside>
         )
     }
 }
 
-export default SideBar;
+export default connect(state => ({
+    connection: state.connection.toJS()
+}))(SideBar);

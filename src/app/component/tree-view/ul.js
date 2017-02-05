@@ -5,8 +5,14 @@ import LI from './li'
 class UL extends Component {
 
     render() {
-        let {items,child} = this.props;
-        items = items.map((item, index) => <LI key={index} child={child} item={item}/>);
+        let {items,child,selectItem,openGroups,activeTab} = this.props;
+        items = items.map((item, index) => <LI
+            selectItem={selectItem}
+            key={index}
+            activeTab={activeTab}
+            child={child}
+            openGroups={openGroups}
+            item={item}/>);
         return (
             <ul>
                 {items}
@@ -17,7 +23,8 @@ class UL extends Component {
 
 UL.propTypes = {
     items: PropTypes.array.isRequired,
-    child: PropTypes.bool.isRequired
+    child: PropTypes.bool.isRequired,
+    selectItem: PropTypes.func.isRequired
 };
 
 export default UL;

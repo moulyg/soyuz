@@ -49,6 +49,11 @@ aside {
 
 .tree-view ul ul {
     padding-left: 15px;
+    display: none;
+}
+
+.tree-view ul li.open ul {
+    display: block;
 }
 
 .tree-view ul li {
@@ -64,6 +69,14 @@ aside {
 .tree-view ul li a {
     color: #9da5b3;
     text-decoration: none;
+}
+
+.tree-view ul li.active a {
+    color: #ffffff;
+}
+
+.tree-view ul li.active i {
+    color: #ffffff;
 }
 
 .tab-menu {
@@ -96,10 +109,33 @@ aside {
     display: block;
     text-decoration: none;
     border-left: 2px solid transparent;
+    position: relative;
+}
+
+.tab-menu li a .close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #ffffff;
+    line-height: 20px;
+    text-align: center;
+    display: none;
+    border-radius: 5px;
 }
 
 .tab-menu li:hover {
     background: #282c34;
+}
+
+.tab-menu li:hover a .close {
+    display: block;
+}
+
+.tab-menu li a .close:hover {
+    color: #282c34;
+    background: #598def;
 }
 
 .tab-menu li:hover a {
@@ -121,4 +157,9 @@ aside {
     width: 100%;
     height: calc(100vh - 40px);
     background: #282c34;
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
 }
